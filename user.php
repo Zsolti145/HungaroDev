@@ -47,12 +47,13 @@ if (!isset($_SESSION["logged-in"])) {
           <tbody>
             <tr>
               <td>Név:</td>
-              <td><?php if (isset($_SESSION['user']));
+              <td><?php if (isset($_SESSION['user']))
                   echo $_SESSION['user']; ?></td>
             </tr>
             <tr>
               <td>E-mail:</td>
-              <td><?php echo $_GET['email']; ?></td>
+              <td> <?= htmlspecialchars($_SESSION["email"] ?? ""); ?>
+              </td>
 
             </tr>
             <tr>

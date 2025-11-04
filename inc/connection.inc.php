@@ -4,23 +4,24 @@ class connection{
 
     function Connect(){
     $Conn = new mysqli("localhost","root","","loginform");
-    return $Conn;
     if($Conn->connect_error)
-   die("Nem sikerült csatlakozni az adatbázishoz!");
+        die("Nem sikerült csatlakozni az adatbázishoz!");
+    return $Conn;
     }
 
    function login($user,$pwd){
      $Conn = $this->Connect();
 
-        $sql = "SELECT id ,FelhasznaloNev, Jelszo FROM users WHERE FelhasznaloNev='$user'";
+        $sql = "SELECT id ,FelhasznaloNev, Jelszo,Email FROM users WHERE FelhasznaloNev='$user'";
         $result = $Conn->query($sql);
         while($row = $result->fetch_assoc()){
             $hashedPwd = $row['Jelszo'];
             $_SESSION["user"] = $row['FelhasznaloNev'];
+            $_SESSION["email"] = $row['Email'];
         }
         if(password_verify($pwd, $hashedPwd)){
             $_SESSION["logged-in"] = true;
-            header("Location: ../home.php");
+              header("Location: ../home.php");
         }     
          else{
             header("Location: ../index.php");
