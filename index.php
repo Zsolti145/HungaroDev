@@ -17,7 +17,7 @@ if (isset($_SESSION["logged-in"])) {
     <title>HungaroDev</title>
 </head>
 
-<body>
+<body class="index">
     <div class="site">
 
         <section class="form-box ">
@@ -71,24 +71,43 @@ if (isset($_SESSION["logged-in"])) {
 
     </form>
     </div>
-
     </section>
+    <div class="form-sidepanel">
+        <div id="info1" class="info1">
+            <h1>Üdvözlünk!</h1>
+            <p>Helló újra</p>
+
+        </div>
+        <div id="info2" class="info2" hidden>
+            <h1>Regisztrálj!</h1>
+            <p style="font-size: 1.2rem";">Ha még nem rendelkezél felhasználói fiókkal,akkor most létre hozhatod a sajátodat még ma!</p>
+
+        </div>
+    </div>
+
     </div>
     <script>
         var x = document.getElementById("login");
         var y = document.getElementById("register");
         var z = document.getElementById("btn");
+        var info1 = document.getElementById("info1");
+        var info2 = document.getElementById("info2");
 
         function login() {
             x.style.left = "0px";
             y.style.left = "450px";
             z.style.left = "0";
+            info1.hidden = false;
+            info2.hidden = true
         }
 
         function register() {
             x.style.left = "-400px";
             y.style.left = "0px";
             z.style.left = "170px";
+            info1.hidden = true;
+            info2.hidden = false;
+
         }
     </script>
 

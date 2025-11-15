@@ -3,25 +3,51 @@
   padding: 0;
   font-family: "Montserrat", sans-serif;
 }
-.site {
+body.index {
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("sky2.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("sky2.jpg");
   background-position: center;
   background-size: cover;
-  position: absolute;
 }
+body.home {
+ background-image: none;
+}
+
+.site {
+  margin: 83px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.form-sidepanel {
+  background-color: #e5e5e5;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(66, 82, 124, 0.3);
+  padding: 2rem 1rem;
+  width: 24%;
+  border-radius: 0 20px 20px 0;
+}
+@media (max-width: 560px) {
+  .form-sidepanel {
+    width: 100%;
+    height: auto;
+    border-radius: 0 0 20px 20px;
+  }
+}
+
 .form-box {
   width: 380px;
   height: 610px;
   position: relative;
-  margin: 6% auto;
   padding: 5px;
   overflow: hidden;
   border-radius: 20px;
   background: rgb(32 38 64 / 46%);
-  border-radius: 16px;
+  border-radius: 20px 0 0 20px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(12px);
@@ -34,6 +60,16 @@
   border-radius: 10px;
   width: 322px;
 }
+#formFile::-webkit-file-upload-button{
+  background: linear-gradient(90deg, #33407a, #4453b8);
+  border: none;
+  
+  color: whitesmoke;
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+
 .toggle-btn {
   padding: 1.2rem 2rem;
   cursor: pointer;
@@ -118,4 +154,5 @@ span {
 
 a {
   text-decoration: none;
+  color: #fff!important;
 }

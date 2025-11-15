@@ -10,7 +10,7 @@
     rgba(0, 0, 0, 1) 0%,
     rgba(44, 52, 89, 1) 83%
   );
-  color: whitesmoke;
+  
 }
 
 
@@ -50,7 +50,7 @@ li.nav-item{
 }
 nav a {
   text-decoration: none;
-  color: lightgray;
+  color: whitesmoke!important;
 }
 nav a:hover {
   color: plum;
@@ -59,12 +59,12 @@ li .active {
   color: plum;
 }
 
-h2{
+/* h2{
   list-style-type: none;
   position: absolute;
   right: 0;
   
-}
+} */
 
 #profpic{
 width: 50px;
